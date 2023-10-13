@@ -41,3 +41,29 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* --------------------- DEFAULT STYLING END --------------------- */
+
+html, body {
+    height: 100%;
+}
+.containerAll {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr 3fr;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+.containerSideBar {
+    grid-area: 1 / 1 / 4 / 2;
+}
+.containerHeader {
+    grid-area: 1 / 2 / 2 / 4;
+}
+.containerProjects {
+    grid-area: 2 / 2 / 4 / 3;
+}
+.containerAnnouncements {
+    grid-area: 2 / 3 / 3 / 4;
+}
+.containerTrending {
+    grid-area: 3 / 3 / 4 / 4;
+}
