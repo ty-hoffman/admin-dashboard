@@ -50,7 +50,7 @@ html, body {
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 3fr 3fr;
-    grid-template-columns: minmax(150px, 1fr) 3fr 1fr;
+    grid-template-columns: minmax(175px, 1fr) 3fr 1fr;
 }
 .containerSideBar {
     grid-area: 1 / 1 / 4 / 2;
@@ -70,6 +70,12 @@ html, body {
 }
 .containerProjects {
     grid-area: 2 / 2 / 4 / 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: .15fr repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
+    overflow: auto;
 }
 .containerAnnouncements {
     grid-area: 2 / 3 / 3 / 4;
@@ -79,7 +85,7 @@ html, body {
 }
 .containerProjects, .containerAnnouncements,
 .containerTrending {
-    background-color: #DAFFFB;
+    background-color: white;
 }
 .sideIcon {
     height: 25px;
@@ -95,6 +101,7 @@ html, body {
 }
 .containerSideBar li:hover {
     background-color: #176B87;
+    cursor: pointer;
 }
 .containerSideBar li {
     display: flex;
@@ -110,6 +117,16 @@ html, body {
     align-items: center;
     color: white;
 }
+.headerBottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    gap: 5px;
+    font-size: 1.25rem;
+    align-items: center;
+    color: white;
+}
+
 input {
     max-width: 400px;
     flex-grow: 1;
@@ -134,4 +151,39 @@ button:not([type='submit']), input {
     border-radius: 10px;
     border: 2px solid #04364A;
     box-shadow: 5px 5px 5px #04364A;
+}
+
+.userActions:hover  {
+    background-color: #04364A;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+
+.projectHeader {
+    grid-column: 1 / -1;
+}
+.projectHeader, .announcementHeader, .trendingHeader {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.projectIndivHeader {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-bottom: 8px;
+}
+.project {
+    background-color: rgb(222, 222, 222);
+    border-left: 5px solid #176B87;
+    color: black;
+    padding: 30px 10px 10px 10px;
+    border-radius: 10px;
+}
+.containerAnnouncements, .containerTrending {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+    padding: 15px;
+    gap: 5px;
 }
